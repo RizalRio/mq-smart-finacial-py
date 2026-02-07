@@ -1,1 +1,0 @@
-# mq-smart-finacial-py
