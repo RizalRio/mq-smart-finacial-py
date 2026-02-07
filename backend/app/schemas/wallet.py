@@ -16,6 +16,12 @@ class WalletBase(BaseModel):
 class WalletCreate(WalletBase):
     pass
 
+# --- KHUSUS UPDATE ---
+class WalletUpdate(BaseModel):
+    name: Optional[str] = None
+    type: Optional[WalletTypeEnum] = None
+    # Balance sengaja tidak dimasukkan agar tidak bisa diedit lewat sini
+
 class WalletResponse(WalletBase):
     id: int
     user_id: int
