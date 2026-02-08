@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
-from app.routers import auth, wallets  # <--- 1. Import Wallets
+from app.routers import auth, wallets
+from app.routers import transactions
+from app.routers import health
 
 app = FastAPI(title=settings.APP_NAME)
 
@@ -13,11 +15,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include Routers
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["Auth"])
-# 2. Pasang Router Wallets
 app.include_router(wallets.router, prefix="/api/v1/wallets", tags=["Wallets"])
-
-@app.get("/")
-async def root():
-    return {"message": "Smart Financial Planner API is Ready! 🚀"}
+app.include_router(transactions.router, prefix="/api/v1/transactions", tags=["Transactions"])
+app.include_router(health.router, prefix="/api/v1/health", tags=["Analysis"])
