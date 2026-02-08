@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
+  /* Base System */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a; /* Slate-900 (Lebih soft dari hitam pekat) */
+
+  /* --- BRAND PALETTE --- */
+
+  /* Primary: KUNING (Warna Utama - Wealth/Energy) */
+  /* Kita pakai kuning yang agak emas dikit biar gak sakit mata */
+  --primary: #ffd60a;
+  --primary-foreground: #1a1a1a; /* Text Hitam Wajib (biar kebaca di kuning) */
+
+  /* Secondary: BIRU MUDA (Trust/Tech) */
+  --secondary: #0ea5e9; /* Sky-500 */
+  --secondary-foreground: #ffffff;
+
+  /* Tertiary: PINK (Accent/Playful) */
+  --tertiary: #f43f5e; /* Rose-500 */
+  --tertiary-foreground: #ffffff;
+
+  /* Muted / Abu-abu */
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
 }
 
+/* Konfigurasi Tailwind v4 */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Registrasi Warna Brand */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-foreground: var(--tertiary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    /* Di dark mode, warna brand tetap sama biar identitas terjaga */
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
