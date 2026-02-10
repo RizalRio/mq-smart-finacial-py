@@ -97,7 +97,8 @@ export default function LoginPage() {
               {...register("email")}
               type="email"
               placeholder="nama@email.com"
-              className="w-full px-5 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all placeholder:text-slate-400 font-medium"
+              // PERBAIKAN: Tambah 'text-slate-900' agar teks ketikan hitam pekat
+              className="w-full px-5 py-3.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all placeholder:text-slate-400 font-medium"
             />
             {errors.email && (
               <p className="text-tertiary text-sm font-medium animate-pulse">
@@ -123,7 +124,8 @@ export default function LoginPage() {
               {...register("password")}
               type="password"
               placeholder="••••••••"
-              className="w-full px-5 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all placeholder:text-slate-400 font-medium"
+              // PERBAIKAN: Tambah 'text-slate-900' agar teks ketikan hitam pekat
+              className="w-full px-5 py-3.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all placeholder:text-slate-400 font-medium"
             />
             {errors.password && (
               <p className="text-tertiary text-sm font-medium animate-pulse">
@@ -183,7 +185,7 @@ export default function LoginPage() {
 
         {/* Footer Kecil di kanan */}
         <div className="relative z-10 flex gap-4 text-sm text-slate-500 font-medium">
-          <span>© 2024 SmartPlanner</span>
+          <span>© 2026 SmartPlanner</span>
           <span>Privacy Policy</span>
         </div>
       </div>
