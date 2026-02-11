@@ -4,6 +4,7 @@ from app.core.config import settings
 from app.routers import auth, wallets
 from app.routers import transactions
 from app.routers import health
+from app.routers import ocr
 
 app = FastAPI(title=settings.APP_NAME)
 
@@ -19,3 +20,4 @@ app.include_router(auth.router, prefix="/api/v1/auth", tags=["Auth"])
 app.include_router(wallets.router, prefix="/api/v1/wallets", tags=["Wallets"])
 app.include_router(transactions.router, prefix="/api/v1/transactions", tags=["Transactions"])
 app.include_router(health.router, prefix="/api/v1/health", tags=["Analysis"])
+app.include_router(ocr.router, prefix="/api/v1/ocr", tags=["OCR"])
